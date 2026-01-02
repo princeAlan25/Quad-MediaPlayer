@@ -1,0 +1,531 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/*font link for font-family (Modimi One)*/
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+/*Micro 5 font-family*/
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Micro+5&display=swap');
+
+
+/*styling header and navigation bar*/
+:root{
+    background-image: url(./icons/headphonebg.jpg);
+    background-size: cover;
+    background-origin: border-box;
+}
+:root *{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+body{
+    
+}
+header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.425));
+    align-items: center;
+}
+header .logo-icons{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header .logo-icons .logo-icons-holder{
+    width: 10%;
+    height: 100%;
+}
+.logo-icons-holder .fa{
+    position: absolute;
+    left: 0;
+    color: orange;
+}
+.logo-icons-holder .fa-tv{
+    font-size: 45px;
+}
+.logo-icons-holder .fa-music{
+    font-size: 30px;
+    left: 30%;
+    top: 10%;
+}
+header .media-title{
+    font-family: "Micro 5";
+}
+header .media-title{
+    font-family: "Madimi One";
+    color: orange;
+}
+
+/*styling header navigations*/
+header nav{
+    width: 60%;
+    height: 100%;
+}
+nav ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+nav ul *{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+nav ul li:hover{
+    background: linear-gradient(to left,rgba(0, 0, 0, 0.452),rgba(255, 255, 255, 0.521));
+}
+nav ul #nav:hover{
+    transition-duration:200ms;
+    background: linear-gradient(to left,rgba(0, 0, 0, 0.452),rgba(255, 255, 255, 0.521));
+}
+/*end*/
+
+/*styling main bar and its contents*/
+
+main{
+    width: 99.5%;
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+main .sum-main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: none;
+}
+#audios-main{
+    display: none;
+}
+
+/*styling audios sub-main*/
+
+.mp3-player-side{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0.5%;
+}
+.mp3-player{
+    width: 90%;
+    height: 93%;
+    background: radial-gradient(red,pink);
+    box-shadow: inset 0px 0px 10px 5px rgb(170, 0, 28);
+    padding: 3%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.mp3-player .fa-cog, .fa-power-off{
+    font-size: 30px;
+    padding: 1%;
+    box-shadow: 0px 0px 5px 0px rgb(112, 0, 0);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.mp3-player .upper-part{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 1%;
+}
+.upper-part .fa:active{
+    box-shadow: inset 0px 0px 5px 1px rgb(100, 47, 56);
+}
+.upper-part .fa-power-off{
+    color: rgb(180, 0, 30);
+}
+@keyframes powerButtonOn{
+    from{color: rgb(0, 255, 13);}
+    to{color:rgb(0, 4, 255);}
+}
+.song-played{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-linear-gradient(to left,pink,rgb(72, 121, 89));
+}
+.song-played .song-played-name{
+    width: 100%;
+    font-family: "Micro 5";
+    color: pink;
+    text-align: center;
+    border: 5px groove pink;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.mp3-player .songs-list-part{
+    width: 99%;
+    height: 40%;
+    padding: 0%;
+    background: linear-gradient(45deg,black,rgb(116, 115, 115),black);
+    border: 3px groove rgb(253, 45, 80);
+    top: 3%;
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.mp3-player #songs-list-holder{
+    width: 98%;
+    height: 97%;
+    display: none;
+    overflow-y: scroll;
+}
+.songs-list-part .song-detail-holder{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1%;
+}
+.song-list-name{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    overflow: hidden;
+    background: linear-gradient(to left,lightblue,transparent);
+    cursor: pointer;
+}
+.song-list-name:hover{
+    background: linear-gradient(to right,lightblue,transparent);
+}
+.fa-trash{
+    right: 2%;
+    cursor: pointer;
+}
+.fa-trash:hover{
+    color: red;
+}
+.fa-trash:active{
+    font-size: 20px;
+}
+
+.mp3-player .middle-part{
+    width: 100%;
+    height: 3%;
+    top: 3%;
+}
+.middle-part audio{
+    width: 100%;
+    height: 100%;
+}
+.middle-part::before{
+    position: absolute;
+    content: "";
+    width:8%;
+    height: 100%;
+    background: pink;
+    z-index: 1;
+    box-shadow: inset -2px -1px 10px 0px rgb(245, 91, 117);
+}
+.middle-part::after{
+    position: absolute;
+    content: "";
+    width:8%;
+    height: 100%;
+    background: pink;
+    z-index: 1;
+    box-shadow: inset -2px -1px 10px 0px rgb(245, 91, 117);
+    right: 0%;
+}
+.mp3-player .lower-part{
+    width: 70%;
+    height: 40%;
+    margin-inline: auto;
+    top: 5%;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+.lower-part div{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lower-part .lower-top{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.lower-part .lower-middle{
+    height: 58%;
+}
+.lower-part .lower-bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.lower-part .fa{
+    font-size: 20px;
+    padding-inline: 10%;
+    padding-block: 3%;
+    box-shadow:  inset 0px 0px 5px 1px rgb(128, 0, 21);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: brown;
+}
+.lower-part .fa-play, .lower-part .fa-pause{
+    padding-inline: 20%;
+    padding-block: 16%;
+}
+.lower-part .fa-backward, .lower-part .fa-forward{
+    padding-block: 16%;
+}
+.lower-part .fa-repeat{
+    padding-inline: 47%;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+}
+.lower-part .fa-random, .lower-part .fa-retweet{
+    padding-inline: 21%;
+    padding-block: 3.4%;
+}
+.lower-part .fa-random{
+    border-bottom-left-radius: 30px;
+}
+.lower-part .fa-retweet{
+    border-bottom-right-radius: 30px;
+}
+.lower-part .fa:active{
+    box-shadow:  inset 0px 0px 5px 4px rgb(128, 0, 21);
+    color: rgb(161, 65, 65);
+}
+/*end of mp3 player device and mp3 player side style*/
+
+
+/*audio setting-side style portion*/
+.audio-settings-side{
+    width: 0%;
+    height: 95%;
+    background-color: rgba(255, 255, 255, 0.438);
+    margin-block: auto;
+    border-right: 5px double rgb(214, 84, 106);
+    transition-duration: 300ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+.audio-settings-side .form-setting{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-setting form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    color: pink;
+}
+.form-setting form legend{
+    font-family: monospace;
+    color: pink;
+    font-size: 20px;
+    letter-spacing: -2px;
+    font-weight: bold;
+    text-align: center;
+}
+.form-setting form label{
+    width: 100%;
+    padding-inline: 12%;
+    font-weight: bold;
+}
+.form-setting input[type="file"]{
+    width: 90%;
+    height: 70%;
+    border-bottom: thin solid pink;
+    font-weight: bold;
+}
+.form-setting input[type="file"]:hover{
+    background: linear-gradient(to top,rgba(255, 192, 203, 0.568),transparent);
+}
+.form-setting input{
+    cursor: pointer;
+}
+.form-setting fieldset{
+    width: 100%;
+    height: 30%;
+}
+.form-setting .input-fieldset{
+    width: 75%;
+    padding-left: 5%;
+}
+.form-setting .buttons-fieldset{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.form-setting input[type="button"], .form-setting input[type="reset"]{
+    color: pink;
+    background: none;
+    border: 3px solid pink;
+    width: 40%;
+    height: 90%;
+    font-size: 17px;
+    transition-duration: 200ms;
+}
+.form-setting input[type="button"]:hover{
+    background: linear-gradient(to right,rgba(255, 192, 203, 0.753),transparent);
+}
+.form-setting input[type="button"]:active{
+    background: linear-gradient(to left,rgba(255, 192, 203, 0.753),transparent);
+}
+.form-setting input[type="reset"]:hover{
+    background: linear-gradient(to right,rgba(255, 115, 139, 0.753),transparent);
+}
+.form-setting input[type="reset"]:active{
+    background: linear-gradient(to left,rgba(253, 121, 143, 0.753),transparent);
+}
+.form-setting fieldset{
+    border: none;
+}
+
+.audio-settings-side .sub-settings-part{
+    width: 95%;
+    height: 50%;
+    border: thin solid pink;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: none;
+}
+.sub-settings-part .sub-setting-header{
+    width: 30%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+.sub-setting-header article{
+    width: 90%;
+    height: 30%;
+    border-bottom: thin solid pink;
+    background: linear-gradient(to top, rgb(255, 180, 193),transparent);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.sub-setting-header article:hover{
+    opacity: 0.5;
+}
+.sub-setting-header article:active{
+    opacity: 1;
+}
+.sub-setting-header .trash-title{
+    background: none;
+    color: pink;
+    cursor: auto;
+}
+.sub-settings-part .sub-setting-trash{
+    width: 70%;
+    height: 95%;
+    border: thin solid pink;
+    border-left: none;
+}
+.sub-setting-trash span{
+    width: 95%;
+    height: 15%;
+    border-bottom: thin solid pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-setting-trash span p{
+    width: 95%;
+    overflow: hidden;
+    font-size: 17px;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+}
+.sub-setting-trash span .fa{
+    font-size: 20px;
+    -webkit-transform: rotate(43deg);
+    -moz-transform: rotate(43deg);
+    -ms-transform: rotate(43deg);
+    -o-transform: rotate(43deg);
+    transform: rotate(43deg);
+    cursor: pointer;
+}
+.sub-setting-trash span .fa:hover{
+    color: green;
+    font-size: 25px;
+}
+.sub-setting-trash span .fa:active{
+    color: green;
+    font-size: 20px;
+}
+
+
+
+
+/*styling button sound effects*/
+#menuButtonSound{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}

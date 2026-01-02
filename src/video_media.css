@@ -1,0 +1,207 @@
+#videos-main{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.videos-main .screen-video-side{
+    width: 60%;
+    height: 99%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.video-functions{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    background: transparent;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    color: transparent;
+    cursor: grab;
+}
+.video-functions:hover{
+    transition-duration: 200ms;
+    background: linear-gradient(black,transparent);
+    color: pink;
+}
+.video-functions h4{
+    padding-inline: 4%;
+    height: 50%;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+.video-functions h4:hover{
+    opacity: 0.7;
+    text-decoration: underline;
+    text-decoration-color: pink;
+    -moz-text-decoration-color: pink;
+}
+.video-functions h4:active{
+    opacity: 1;
+}
+
+.more-videos{
+    width: 4%;
+    height: 50%;
+    background: repeating-linear-gradient(pink 0%,pink 10%, transparent 10%,transparent 20%);
+    cursor: pointer;
+}
+.more-videos:hover{
+    opacity: 0.7;
+}
+
+.all-uploaded-videos{
+    width: 46%;
+    height: 85%;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.384);
+    position: absolute;
+    top: 10%;
+    right: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 4px 2px black;
+    height: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.all-uploaded-videos .video-holder{
+    width: 90%;
+    height: 40%;
+    margin-inline: auto;
+    box-shadow: 0px 0px 3px 1px black;
+    margin-bottom: 5%;
+    background: white;
+}
+.video-holder video{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.video-holder:hover{
+    transition-duration: 200ms;
+    opacity: 0.7;
+}
+
+.auto-next-videos-holder{
+    position: absolute;
+    width: 55%;
+    height: 60%;
+    background-color: rgb(110, 108, 108);
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.auto-next-videos-holder video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 0;
+}
+
+.auto-next-videos-holder .seconds-counter{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-shadow: 0px 0px 4px 2px black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: decreaseSeconds 5s linear 1;
+    -webkit-animation: decreaseSeconds 5s linear 1;
+    color: black;
+}
+@keyframes decreaseSeconds {
+    from{background: white;}
+    to{background: transparent;}
+}
+
+
+.screen-video-side video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-actions-space{
+    width: 32%;
+    height: 90%;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.video-actions-space form{
+    width: 80%;
+    height: 10%;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 4px 2px pink;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 1%;
+    text-align: center;
+}
+.video-actions-space form fieldset{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.video-actions-space form fieldset label{
+    font-size: 0px;
+}
+
+.video-actions-space form input{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.video-actions-space form input:hover{
+    transition-duration: 200ms;
+    background: linear-gradient(to top,pink,transparent);
+}
+
+.video-actions-space .text-track-screen{
+    width: 90%;
+    height: 70%;
+    padding: 2%;
+    background-color: rgba(255, 174, 174, 0.336);
+    box-shadow: 0px 0px 4px 2px pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.text-track-screen p{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}

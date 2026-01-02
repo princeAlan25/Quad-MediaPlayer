@@ -1,0 +1,180 @@
+#images-main{
+    justify-content: space-around;
+    align-items: center;
+  }
+.images-side{
+    width: 70%;
+    height: 95%;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 2%;
+    row-gap: 3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: repeating-linear-gradient(transparent 0%,transparent 10%,pink 10.5%,pink 10.7%);
+    transform: perspective(1200px) rotateX(45deg);
+    -webkit-transform: perspective(1200px) rotateX(45deg);
+    -moz-transform: perspective(1200px) rotateX(45deg);
+    -ms-transform: perspective(1200px) rotateX(45deg);
+    -o-transform: perspective(1200px) rotateX(45deg);
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    top: -25%;
+}
+.images-side img{
+    border-radius: 10px;
+    cursor: grab;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.images-side img:hover{
+    transition-duration: 200ms;
+    opacity: 0.5;
+    transform: perspective(1000px) translateZ(50px);
+    -webkit-transform: perspective(1000px) translateZ(50px);
+    -moz-transform: perspective(1000px) translateZ(50px);
+    -ms-transform: perspective(1000px) translateZ(50px);
+    -o-transform: perspective(1000px) translateZ(50px);
+    transform-style:preserve-3d;
+}
+.images-side img:active{
+    opacity: 1;
+}
+
+.images-main .viewed-image-holder{
+    width: 60%;
+    height: 95%;
+    position: absolute;
+    background-color: white;
+    left: 5%;
+    z-index: 1;
+    font-family: impact;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: transparent;
+    box-shadow: 0px 0px 10px 5px black;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition-duration: 200ms;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: center;
+}
+.viewed-image-holder div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.viewed-image-holder .prev-player:hover{
+    width: 7%;
+    cursor: pointer;
+    transition-duration: 200ms;
+    background: linear-gradient(to right,rgba(163, 146, 149, 0.555),transparent);
+    color: black;
+}
+.viewed-image-holder .prev-player:active{
+    background: linear-gradient(to left,rgba(163, 146, 149, 0.555),transparent);
+}
+
+
+.close-button img:hover{
+    transition-duration: 200ms;
+    width: 55px;
+}
+.close-button img:active{
+    width: 50px;
+}
+
+.viewed-image-holder .next-player:hover{
+    cursor: pointer;
+    background: linear-gradient(to left,rgba(163, 146, 149, 0.555),transparent);
+    color: black;
+    right: 0;
+    width: 100%;
+}
+.viewed-image-holder .next-player:active{
+    background: linear-gradient(to right,rgba(163, 146, 149, 0.555),transparent);
+}
+
+
+
+.upload-side{
+    width: 25%;
+    height: 95%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.upload-side form{
+    width: 100%;
+    height: 25%;
+    background-color: rgba(255, 255, 255, 0.486);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: pink;
+}
+
+.upload-side form fieldset{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+    border-color: pink;
+}
+
+.upload-side form input{
+    width: 90%;
+    height: 60%;
+    border: thin solid pink;
+    border-top: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.upload-side form input:hover{
+    transition-duration: 200ms;
+    background: radial-gradient(pink,transparent);
+}
+
+.upload-side .image-slider{
+    width: 100%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.452);
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+.image-slider .slide-image-holder{
+    width: 90%;
+    height: 65%;
+    margin-block: 5%;
+    margin-inline: auto;
+    background-color: pink;
+    box-shadow: 0px 0px 10px 1px black;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+    background-size: cover;
+    transition-duration: 300ms;
+    font-family: impact;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

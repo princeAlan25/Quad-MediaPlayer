@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media player</title>
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="image_media.css">
+    <link rel="stylesheet" href="video_media.css">
+    <link rel="stylesheet" href="doc_media.css">
+</head>
+<body>
+    <header>
+        <div class="logo-icons">
+            <div class="logo-icons-holder">
+                <i class="fa fa-tv"></i>
+                <i class="fa fa-music"></i>
+            </div> 
+            <h1 class="media-title"><font color="pink">media</font>PlayList</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li class="nav audio-nav" id="audio-nav" onclick="activateClickedNav(this.id)">audio</li>
+                <li class="nav image-nav" id="image-nav" onclick="activateClickedNav(this.id)">image</li>
+                <li class="nav video-nav" id="video-nav" onclick="activateClickedNav(this.id)">video</li>
+                <li class="nav document-nav" id="document-nav" onclick="activateClickedNav(this.id)">document</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="sum-main audios-main" id="audios-main">
+
+            <div class="mp3-player-side">
+                
+                <div class="mp3-player">
+                    <div class="upper-part">
+                        <i class="fa fa-cog" id="setting-button" onclick="showSettingBar()"></i>
+                        <div class="song-played"><p class="song-played-name">...Mp3 Player...</p></div>
+                        <i class="fa fa-power-off" id="power-button" onclick="switchMp3Device()"></i>
+                    </div>
+
+                    <div class="songs-list-part" id="song-list-part">
+                        <div id="songs-list-holder">
+                            <span class="song-detail-holder">
+                                <i class="fa fa-headphon"></i>
+                                <p class="song-list-name">No Song To play!</p>
+                                <i class="fa fa-tras"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="middle-part">
+                        <audio src="" controls id="audio-tag"></audio>
+                    </div>
+
+                    <div class="lower-part">
+                        <div class="lower-top">
+                            <i class="fa fa-repeat" onclick="restartPlayList()"></i>
+                        </div>
+                        <div class="lower-middle">
+                            <i class="fa fa-backward" onclick="playPreviousSong()"></i>
+                            <i class="fa fa-play" id="play-pause" onclick="playPauseAudio()"></i>
+                            <i class="fa fa-forward" onclick="playNextSong()"></i>
+                        </div>
+                        <div class="lower-bottom">
+                            <i class="fa fa-random" onclick="setRandomPlay()" id="random-button"></i>
+                            <i class="fa fa-retweet" onclick="setInfiniteLoop()" id="loop-button"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audio-settings-side">
+                <div class="form-setting">
+                    <form enctype="multipart/form-data">
+                        <fieldset class="input-fieldset">
+                            <legend>Select and Upload your Audios</legend>
+                            <label for="file-input" title="file-input">Select All Audios you wish to use to create playlist</label><br>
+                            <input type="file" id="file-input" accept="audio/*" multiple>
+                        </fieldset>
+                        <fieldset class="buttons-fieldset">
+                            <input type="button" value="upload Now" class="upload-button" onclick="uploadAudios()">
+                            <input type="reset" value="cancel Upload" class="cancel-upload">
+                        </fieldset>
+                        <fieldset class="warn-fieldset">
+                            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!please, in order to create playlist and make our Mp3 player device works perfect is that you have to select more than one audio file from your computer and then after you selected all songs you wish to upload in order to create your PlayList, You have to upload then.!</h4>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="sub-settings-part">
+                    <div class="sub-setting-header">
+                        <article class="trash-title"><h3>Recycle bin</h3></article>
+                        <article onclick="clearTrash()"><i class="fa fa-trash-o"></i><h3>Clear Trash</h3></article>
+                    </div>
+
+                    <div class="sub-setting-trash" id="sub-setting-trash">
+                        <span><p class="deleted-song">deleted song</p></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sum-main images-main" id="images-main">
+            <div class="viewed-image-holder" id="viewed-image-holder">
+                <div class="prev-player" onclick="playPreviousImage()">&lt; Prev</div>
+                <div class="close-button">
+                    <img src="./icons/close.svg" alt="" width="50" onclick="closeViewedImage()">
+                     <div class="next-player" onclick="playNextImage()">
+                        Next &gt;
+                     </div>
+                </div>
+            </div>
+            <div class="images-side"></div>
+
+            <div class="upload-side">
+                <form class="form" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Upload all Images you want!</legend>
+                        <label for="images-file-input">Browse Images</label>
+                        <input type="file" name="images" id="images-file-input" accept="image/*" multiple>
+                    </fieldset>
+                </form>
+                <div class="image-slider"></div>
+            </div>
+        </div>
+        <div class="sum-main videos-main" id="videos-main">
+            <div class="screen-video-side">
+                <div class="video-functions">
+                    <h4 class="prev" onclick="playPreviousVideo()">Previous</h4>
+                    <h4 class="next" onclick="playNextVideo()">Next</h4>
+                    <div class="more-videos" onclick="toggleVideosSpace()"></div>
+                </div>
+
+                <div class="all-uploaded-videos"></div>
+                
+                <div class="auto-next-videos-holder">
+                    <video src="" class="auto-next-video"></video>
+                    <div class="seconds-counter">
+                        wait<font style="font-weight: bold;" size="5px" id="next-notifier">5</font>sec
+                    </div>
+                </div>
+
+                <video src="" controls id="actual-video"></video>
+            
+            </div>
+            <div class="video-actions-space">
+                <form class="video-upload-form" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Import all Videos you Want</legend>
+                        <label for="video-input">.</label>
+                        <input type="file" name="video" id="video-input" accept="video/*" multiple>
+                    </fieldset>
+                </form>
+                <div class="text-track-screen" id="text-screen">
+                    <p><font color="black" style="font-weight: bold;">Video Name: </font>No video information</p>
+                    <p><font color="black" style="font-weight: bold;">Video Size: </font>No video information</p>
+                    <p><font color="black" style="font-weight: bold;">Downloaded Date: </font>No video information</p>
+                </div>
+            </div>
+        </div>
+        <div class="sum-main documents-main" id="documents-main">
+            <div class="pdf-viewer">
+                
+            </div>
+            <div class="all-uploaded-pdf">
+                <form class="pdf-upload-form" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Upload All Pdf files you want!</legend>
+                        <label for="pdf-input">
+                            .<input type="file" name="pdf's" id="pdf-input" accept=".pdf" multiple>
+                        </label>
+                    </fieldset>
+                </form>
+                <div class="pdf-files-holder"></div>
+            </div>
+        </div>
+    </main>
+
+    <!--audio sound element for menu button-->
+    <audio src="./butttonSounds/button-124476.mp3" class="buttons-audio" controls id="menuButtonSound"></audio>
+    <!--sounds for mp3 setting-->
+    <audio src="./butttonSounds/interface-soft-click-131438.mp3" class="buttons-audio" id="mp3SettingSound"></audio>
+    <audio src="./butttonSounds/melancholy-ui-chime-47804.mp3" class="buttons-audio" id="switchingMp3"></audio>
+    <!--scripts importation portion-->
+    <script src="media.js"></script>
+    <script src="image_media.js"></script>
+    <script src="video_media.js"></script>
+    <script src="doc_media.js"></script>
+</body>
+</html>
